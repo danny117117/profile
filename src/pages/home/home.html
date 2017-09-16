@@ -1,14 +1,107 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Profile
+        </ion-title>
+    </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+            <ion-list>
+                <form #form="ngForm" (ngSubmit)="onUpdateProfile(form)">
+                    <ion-item>
+                        <ion-label>Gender</ion-label>
+
+                        <ion-select ngModel name="gender">
+                            <ion-option value="Male">Male</ion-option>
+                            <ion-option value="Female"> Female</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked> Title <span class="required">*</span></ion-label>
+                        <ion-input [(ngModel)]="title" name="title" placeholder="required" ></ion-input>
+                    </ion-item>
+                    <!--required-field *ngIf="isTitle"></required-field-->
+                    <ion-item>
+                        <p text-center>Latin Name</p>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Name <span class="required">*</span></ion-label>
+                        <ion-input [(ngModel)]="name" placeholder="required" name="name" ></ion-input>
+                    </ion-item>
+                    <!--required-field *ngIf="isName"></required-field-->
+                    <ion-item>
+                        <ion-label stacked>Middle</ion-label>
+                        <ion-input ngModel name="middle"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Sur name <span class="required">*</span></ion-label>
+                        <ion-input [(ngModel)]="surname" placeholder="required" name="surname" ></ion-input>
+                    </ion-item>
+                    <!--required-field *ngIf="isSurname"></required-field-->
+                    <ion-item>
+                        <ion-label stacked> Maiden Name</ion-label>
+                        <ion-input ngModel name="maidenname"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <p text-center>Other Information</p>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Birth Day <span class="required">*</span></ion-label>
+                        <ion-datetime displayFormat="MMMM/DDDD/YYYY" [(ngModel)]="birthday" placeholder="required" name="birthday"></ion-datetime>
+                    </ion-item>
+                    <!--required-field *ngIf="isBirthDay"></required-field-->
+                    <ion-item>
+                        <ion-label stacked>Marital</ion-label>
+                        <ion-select ngModel name="marital">
+                            <ion-option value="1">What is your relation to the mian life?</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>ID Type</ion-label>
+                        <ion-select ngModel name="idtype">
+                            <ion-option value="872330194">872330194</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>ID Number</ion-label>
+                        <ion-input ngModel name="idnumber"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Language</ion-label>
+                        <ion-input ngModel name="language" ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Education</ion-label>
+                        <ion-select ngModel name="education">
+                            <ion-option value="primary">Primary</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label stacked>Nationality<span class="required">*</span></ion-label>
+                        <ion-input [(ngModel)]="nationality" placeholder="required"  name="nationality" (change)="onNationalityChange(nationality)"></ion-input>
+                    </ion-item>
+                    <!--required-field *ngIf="isNationality"></required-field-->
+                    <ion-item>
+                        <ion-label stacked>Profession<span class="required">*</span></ion-label>
+                        <ion-input [(ngModel)]="profession" placeholder="required" name="profession" ></ion-input>
+                    </ion-item>
+                    <required-field *ngIf="isProfession"></required-field>
+                    <ion-item>
+                        <ion-label stacked>Mobile<span class="required">*</span></ion-label>
+                        <ion-input  [(ngModel)]="mobile" placeholder="required" name="mobile" ></ion-input>
+                    </ion-item>
+                    <!--required-field *ngIf="isMobile"></required-field-->
+                    <ion-item>
+                        <ion-label stacked>Email</ion-label>
+                        <ion-input ngModel name="email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <button ion-button block type="submit">
+                            Update
+                        </button>
+                    </ion-item>
+                </form>
+            </ion-list>
+
+
 </ion-content>

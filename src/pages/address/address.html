@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Addresses</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Address</ion-label>
+
+      <ion-select ngModel name="address">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2"> 2</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Name <span class="required">*</span></ion-label>
+      <ion-input [(ngModel)]="name" name="name" (change)="onNameChange(name)"></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

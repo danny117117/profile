@@ -1,3 +1,32 @@
 page-home {
+  .required {
+    color: red;
+  }
+
+  ion-select {
+    max-width: 100% !important;
+  }
+  ion-content {
+    background-image: url("https://www.cambriausa.com/globalassets/designs/square-slab-image/torquay_slab_1050x1050.jpg?w=1050&h=1050&mode=crop");
+
+  }
+  .item {
+    background-color: transparent;
+  }
+
+  .ion-navbaritem {
+    background-color: transparent;
+  }
+  p {
+    color: black !important;
+
+  }
+
+  .test
+  {
+    border:1px solid red !important;
+    color:red !important;
+  }
 
 }
+
